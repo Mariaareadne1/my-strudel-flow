@@ -1,173 +1,153 @@
-# Strudel Flow
+# 🎛️ Strudel Flow
 
-A visual drum machine and pattern sequencer built with [Strudel.cc](https://strudel.cc), [React Flow](https://reactflow.dev), and styled using [Tailwind CSS](https://tailwindcss.com/) and [shadcn/ui](https://ui.shadcn.com/). Create complex musical patterns by connecting instrument nodes to effect nodes with a drag-and-drop interface.
+> A visual node-based interface for creating music with [Strudel](https://strudel.cc) — drag, connect, and compose without writing code.
 
-[Live Demo](https://xyflow.com/strudel-flow)
-
-## Table of Contents
-
-- [Getting Started](#getting-started)
-- [Tech Stack](#tech-stack)
-- [Node Types](#node-types)
-- [Usage Guide](#usage-guide)
-- [Pattern Syntax](#pattern-syntax)
-- [Development](#development)
-- [Contributing](#contributing)
-
-## Getting Started
-
-To get started, follow these steps:
-
-1. **Install dependencies**:
-
-   ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   # or
-   bun install
-   ```
-
-2. **Run the development server**:
-
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
-   # or
-   bun dev
-   ```
-
-## Tech Stack
-
-- **Audio Engine**: [Strudel.cc](https://strudel.cc) - Web-based live coding environment
-
-- **React Flow Components**: The project uses [React Flow Components](https://reactflow.dev/components) to build nodes. These components are designed to help you quickly get up to speed on projects.
-
-- **shadcn CLI**: The project uses the [shadcn CLI](https://ui.shadcn.com/docs/cli) to manage UI components. This tool builds on top of [Tailwind CSS](https://tailwindcss.com/) and [shadcn/ui](https://ui.shadcn.com/) components, making it easy to add and customize UI elements.
-
-- **State Management with Zustand**: The application uses Zustand for state management, providing a simple and efficient way to manage the state of nodes, edges, and other workflow-related data.
-
-## Node Types
-
-### 🎵 Instruments
-
-- **Pad Node** - Grid-based step sequencer with scales and modifiers
-- **Beat Machine** - Classic drum machine with multiple instrument tracks
-- **Arpeggiator** - Pattern-based arpeggiated sequences with visual feedback
-- **Chord Node** - Interactive chord player with scale selection
-- **Polyrhythm** - Multiple overlapping rhythmic patterns
-- **Custom Node** - Direct Strudel pattern input
-
-### 🎛️ Synths
-
-- **Drum Sounds** - Sample-based drum sound selection
-- **Sample Select** - Custom sample playback and selection
-
-### 🎚️ Audio Effects
-
-- **Gain** - Volume control and amplification
-- **PostGain** - Secondary gain stage
-- **Distortion** - Saturation and harmonic distortion
-- **LPF** - Low-pass filtering with cutoff control
-- **Pan** - Stereo positioning and width
-- **Phaser** - Sweeping phase modulation effect
-- **Crush** - Bit-crushing and sample rate reduction
-- **Jux** - Alternating left/right channel effects
-- **FM** - Frequency modulation synthesis
-- **Room** - Realistic acoustic space simulation with size, fade, and filtering controls
-
-### ⏱️ Time Effects
-
-- **Fast** - Speed multiplication (×2, ×3, ×4)
-- **Slow** - Speed division (÷2, ÷3, ÷4)
-- **Late** - Pattern delay and offset timing
-- **ASDR** - Manages Attack, Release, Sustain and Decay controls
-- **Reverse** - Reverse pattern playback
-- **Palindrome** - Bidirectional pattern playback
-- **Mask** - Probabilistic pattern masking
-- **Ply** - Pattern subdivision and multiplication
-
-## Usage Guide
-
-### Creating Patterns
-
-1. **Basic Pattern**:
-   - Add a drum machine or pad node
-   - Click buttons to activate steps
-   - Adjust tempo with BPM control
-
-2. **Complex Patterns**:
-   - Use Shift+click to select multiple notes for grouping
-   - Apply row modifiers for per-step effects
-   - Chain multiple nodes for layered sounds
-
-### Connecting Nodes
-
-- **Source to Effect**: Drag from sound source to effect node
-- **Effect Chaining**: Connect multiple effects in series
-- **Multiple Sources**: Connect multiple sources to the same effect
-
-### Pattern Modifiers
-
-Each step can have modifiers applied:
-
-- **Normal**: Standard playback
-- **Fast (×2, ×3, ×4)**: Speed multiplication
-- **Slow (/2, /3, /4)**: Speed division
-- **Replicate (!2, !3, !4)**: Note repetition
-- **Elongate (@2, @3, @4)**: Note duration extension
-
-### Performance Controls
-
-- **Global Play/Pause**: Press spacebar to pause/resume all active patterns
-- **Group Controls**: Pause/resume connected node groups independently
-- **Live Pattern Editing**: Modify patterns while playing with real-time updates
-- **Pattern Preview**: View generated Strudel code for each node
-
-### Keyboard Shortcuts
-
-- **Spacebar**: Global play/pause toggle
-- **Shift + Click**: Multi-select grid cells for grouping (in Pad nodes)
-- **Right-click**: Context menu for pattern modifiers
-
-## Development
-
-### Project Structure
-
-```
-src/
-├── components/          # React components
-│   ├── nodes/          # Flow node components
-│   │   ├── instruments/ # Instrument node implementations
-│   │   ├── effects/    # Effect node implementations
-│   │   └── synths/     # Synthesizer node implementations
-│   ├── ui/             # shadcn/ui components
-│   ├── workflow/       # Flow editor components
-│   └── edges/          # Custom edge components
-├── data/               # Static data and configurations
-├── hooks/              # Custom React hooks
-├── lib/                # Utility libraries and core logic
-├── store/              # Zustand state management
-```
-
-## Acknowledgments
-
-- [Strudel.cc](https://strudel.cc)
-- [tweakcn](https://tweakcn.com)
-- [React Flow](https://reactflow.dev)
-- [shadcn/ui](https://ui.shadcn.com)
+![Stars](https://img.shields.io/github/stars/xyflow/strudel-flow?style=flat-square) ![License](https://img.shields.io/badge/License-AGPL--3.0-blue?style=flat-square) ![React Flow](https://img.shields.io/badge/Built%20with-React%20Flow-purple?style=flat-square)
 
 ---
 
-## Contact Us
+## What is this?
 
-We’re here to help! If you have any questions, feedback, instrument recommendations, or just want to share your project with us, feel free to reach out:
+Strudel Flow is a visual programming environment for [Strudel](https://strudel.cc) — the browser-based live coding music language. Instead of writing pattern code by hand, you build music by connecting nodes in a drag-and-drop graph.
 
-- **Contact Form**: Use the contact form on our [website](https://xyflow.com/contact).
-- **Email**: Drop us an email at [info@xyflow.com](mailto:info@xyflow.com).
-- **Discord**: Join our [Discord server](https://discord.com/invite/RVmnytFmGW) to connect with the community and get support.
+Connect an instrument node to an effects node to an output node, tweak the knobs, and hear your pattern come to life — all in the browser, no installation needed.
+
+**Based on** the open source [strudel-flow](https://github.com/xyflow/strudel-flow) project by xyflow.
+
+---
+
+## Features
+
+- 🎹 **Instrument nodes** — Piano, synths, samples, drums
+- 🎛️ **Effect nodes** — LPF, distortion, gain, pan, phaser, room, jux, crush, FM, ADSR and more
+- ⏱️ **Time modifier nodes** — Fast, slow, reverse, palindrome, mask, ply, late
+- 🎵 **Pattern nodes** — Polyrhythm, pad sequencer, chords (I ii iii IV V vi vii°)
+- 🔗 **Visual connections** — Drag nodes to connect them, React Flow powered graph
+- 💾 **Save & Load** — Persist your patches locally
+- ⚡ **Live output** — Generates and plays Strudel code in real time
+
+---
+
+## Getting Started
+
+### Run locally
+
+```bash
+git clone https://github.com/YOUR_USERNAME/my-strudel-flow.git
+cd my-strudel-flow
+npm install
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173)
+
+### Or try the live demo
+
+👉 [xyflow.com/strudel-flow](https://xyflow.com/strudel-flow)
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| UI Framework | React + Vite |
+| Node Graph | [React Flow](https://reactflow.dev) |
+| Music Engine | [Strudel](https://strudel.cc) |
+| Styling | Tailwind CSS + shadcn/ui |
+| Language | TypeScript |
+
+---
+
+## Node Types
+
+### Instrument Nodes
+Produce sound — connect to effect nodes or directly to output.
+
+| Node | Description |
+|------|-------------|
+| Synths | Select from Strudel's synth waveforms |
+| Pad | Grid-based note sequencer |
+| Polyrhythm | Multi-voice euclidean rhythm builder |
+
+### Audio Effect Nodes
+Chain these together to shape your sound.
+
+| Node | Strudel function |
+|------|----------------|
+| LPF | `.lpf()` — low-pass filter |
+| Distortion | `.distort()` — waveshaper |
+| Gain | `.gain()` — volume |
+| Pan | `.pan()` — stereo position |
+| Phaser | `.phaser()` — phaser effect |
+| Room | `.room()` — reverb |
+| Jux | `.jux(rev)` — stereo widening |
+| Crush | `.crush()` — bit crusher |
+| PostGain | `.postgain()` — post-fx gain |
+| FM | `.fm()` — FM synthesis |
+
+### Time Modifier Nodes
+Change how patterns unfold over time.
+
+| Node | Strudel function |
+|------|----------------|
+| Fast | `.fast()` |
+| Slow | `.slow()` |
+| Reverse | `.rev()` |
+| Palindrome | `.palindrome()` |
+| Mask | `.mask()` |
+| Ply | `.ply()` |
+| Late | `.late()` |
+| ADSR | `.attack().decay().sustain().release()` |
+
+### Harmony Nodes
+| Node | Description |
+|------|-------------|
+| Chords | I ii iii IV V vi vii° — Roman numeral chord selector with major/minor/diminished |
+
+---
+
+## Usage Guide
+
+1. **Add a node** — drag from the left panel onto the canvas
+2. **Connect nodes** — drag from an output handle to an input handle
+3. **Configure** — expand the Controls panel on any node to adjust parameters
+4. **Listen** — audio plays automatically as you build
+5. **Save** — use the Save button to persist your patch
+
+---
+
+## Development
+
+```bash
+npm run dev      # Start dev server
+npm run build    # Build for production
+npm run lint     # Run ESLint
+```
+
+---
+
+## Roadmap
+
+- [ ] More instrument node types (MIDI input, custom samples)
+- [ ] Export generated Strudel code to clipboard
+- [ ] Preset library — save and share patches
+- [ ] Integration with sheet-music-to-strudel for importing transcriptions
+- [ ] Mobile-friendly touch interface
+- [ ] Collaborative editing
+
+---
+
+## Credits
+
+- Original project: [strudel-flow](https://github.com/xyflow/strudel-flow) by [xyflow](https://github.com/xyflow)
+- Music engine: [Strudel](https://strudel.cc) by Felix Roos & contributors
+- Node graph: [React Flow](https://reactflow.dev) by xyflow
+
+---
+
+## License
+
+AGPL-3.0 — see [LICENSE](LICENSE) for details.
+
+If you modify and deploy this publicly, you must make your source code available under the same license.
